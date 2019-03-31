@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "438324827332",
+    "firebase_url": "https://crudfirebasekotlin-638a5.firebaseio.com",
+    "project_id": "crudfirebasekotlin-638a5",
+    "storage_bucket": "crudfirebasekotlin-638a5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:438324827332:android:4e80250ab11f26a7",
+        "android_client_info": {
+          "package_name": "com.mahesaiqbal.crudfirebasekotlin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "438324827332-k5nv7d0q5dlqs2qa6kgdg6i98d4qr9k0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mahesaiqbal.crudfirebasekotlin",
+            "certificate_hash": "8be7b9d45cd1405c0b9986e337315f7784683c14"
+          }
+        },
+        {
+          "client_id": "438324827332-vmeaunca7btb5n37jua7h0opgj9tujav.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCADKa8ldpKv2AXPIxeMRFamhrKlEUQA8E"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "438324827332-vmeaunca7btb5n37jua7h0opgj9tujav.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
