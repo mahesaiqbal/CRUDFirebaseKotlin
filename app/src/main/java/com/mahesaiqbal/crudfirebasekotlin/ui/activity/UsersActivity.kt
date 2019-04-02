@@ -4,6 +4,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
+import android.view.MenuItem
 import com.google.firebase.database.*
 import com.mahesaiqbal.crudfirebasekotlin.R
 import com.mahesaiqbal.crudfirebasekotlin.model.Users
@@ -21,7 +22,6 @@ class UsersActivity : AppCompatActivity() {
         setContentView(R.layout.activity_users)
 
         supportActionBar?.title = "Users"
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         ref = FirebaseDatabase.getInstance().getReference("users")
         users = mutableListOf()
@@ -56,5 +56,6 @@ class UsersActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
+        finish()
     }
 }

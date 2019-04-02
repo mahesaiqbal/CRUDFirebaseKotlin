@@ -20,10 +20,13 @@ class MainActivity : AppCompatActivity() {
 
         ref = FirebaseDatabase.getInstance().getReference("users")
 
-        btnSave.setOnClickListener {
+        btn_save.setOnClickListener {
             saveData()
-            val showUsers = Intent(this, UsersActivity::class.java)
-            startActivity(showUsers)
+            startActivity(Intent(this@MainActivity, UsersActivity::class.java))
+        }
+
+        btn_read.setOnClickListener {
+            startActivity(Intent(this@MainActivity, UsersActivity::class.java))
         }
     }
 
