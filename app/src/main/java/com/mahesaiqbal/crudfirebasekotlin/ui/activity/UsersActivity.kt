@@ -1,5 +1,6 @@
-package com.mahesaiqbal.crudfirebasekotlin.ui
+package com.mahesaiqbal.crudfirebasekotlin.ui.activity
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
@@ -20,9 +21,14 @@ class UsersActivity : AppCompatActivity() {
         setContentView(R.layout.activity_users)
 
         supportActionBar?.title = "Users"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         ref = FirebaseDatabase.getInstance().getReference("users")
         users = mutableListOf()
+
+        btn_create_user.setOnClickListener {
+            startActivity(Intent(this@UsersActivity, MainActivity::class.java))
+        }
 
         ref.addValueEventListener(object : ValueEventListener {
             override fun onCancelled(databaseError: DatabaseError) {
@@ -31,12 +37,13 @@ class UsersActivity : AppCompatActivity() {
 
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 if (dataSnapshot.exists()) {
+                    users.clear()
                     for (usr in dataSnapshot.children) {
                         val user = usr.getValue(Users::class.java)
                         users.add(user!!)
                     }
 
-                    usersAdapter = UsersAdapter(users)
+                    usersAdapter = UsersAdapter(this@UsersActivity, users)
 
                     rv_users.apply {
                         layoutManager = LinearLayoutManager(this@UsersActivity)
@@ -45,5 +52,9 @@ class UsersActivity : AppCompatActivity() {
                 }
             }
         })
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
     }
 }

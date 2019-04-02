@@ -1,4 +1,4 @@
-package com.mahesaiqbal.crudfirebasekotlin.ui
+package com.mahesaiqbal.crudfirebasekotlin.ui.activity
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
@@ -31,13 +31,17 @@ class MainActivity : AppCompatActivity() {
         val nama = input_nama.text.toString()
         val status = input_status.text.toString()
 
-        val user = Users(nama, status)
         val userId = ref.push().key.toString()
+        val user = Users(userId, nama, status)
 
         ref.child(userId).setValue(user).addOnCompleteListener {
             Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show()
             input_nama.setText("")
             input_status.setText("")
         }
+    }
+
+    override fun onBackPressed() {
+        startActivity(Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_HOME).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
     }
 }
